@@ -1,0 +1,371 @@
+/* Kurosaki Audio Player v1.0
+   Author: Denis Petyukov <denis.petyukov@gmail.com>
+*/
+
+/* Main */
+.kurosakiHTML5AudioPlayer * {
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    text-indent: -9999px;
+}
+.kurosakiHTML5AudioPlayer {
+    height: 35px;
+    margin-top: 2px;
+    position: relative;
+}
+.kurosakiHTML5AudioPlayer.noSeekBar.noVolumeControl {
+    width: 39px !important;
+}
+.kurosakiHTML5AudioPlayer.noSeekBar {
+    width: 132px !important;
+}
+.kurosakiHTML5AudioPlayer .playAudio {
+    width: 40px;
+    height: 33px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.kurosakiHTML5AudioPlayer.noSeekBar.noVolumeControl .playAudio {
+    width: 39px;
+}
+.kurosakiHTML5AudioPlayer .progressBarWrapOperaFix {
+    position: absolute;
+    top: 1px;
+    width: 100%;
+}
+.kurosakiHTML5AudioPlayer .progressBarWrap {
+    height: 13px;
+    position: relative;
+    top: 10px;
+    margin-left: 50px;
+    margin-right: 105px;
+    float: none;
+}
+.kurosakiHTML5AudioPlayer.noSeekBar .progressBarWrap {
+    display: none;
+}
+.kurosakiHTML5AudioPlayer.noVolumeControl .progressBarWrap {
+    margin-right: 10px;
+}
+.kurosakiHTML5AudioPlayer .progressBarWrap:hover {
+    cursor: pointer;
+}
+.kurosakiHTML5AudioPlayer .progressBar {
+    width: 0;
+    max-width: 100%;
+    height: 13px;
+}
+.kurosakiHTML5AudioPlayer .playerMiddleBorder {
+    width: 2px;
+    height: 33px;
+    position: absolute;
+    top: 0;
+    right: 92px;
+}
+.kurosakiHTML5AudioPlayer.noVolumeControl .playerMiddleBorder {
+    display: none;
+}
+.kurosakiHTML5AudioPlayer .mute {
+    width: 13px;
+    height: 11px;
+    margin-top: 12px;
+    margin-left: 13px;
+    position: absolute;
+    right: 75px;
+    top: 0;
+    z-index: 1;
+}
+.kurosakiHTML5AudioPlayer.noVolumeControl .mute {
+    display: none;
+}
+.kurosakiHTML5AudioPlayer .soundBarWrap {
+    height: 13px;
+    width: 60px;
+    margin-top: 10px;
+    margin-left: 5px;
+    position: absolute;
+    right: 10px;
+    top: 1px;
+}
+.kurosakiHTML5AudioPlayer.noVolumeControl .soundBarWrap {
+    display: none;
+}
+.kurosakiHTML5AudioPlayer .soundBarWrap:hover {
+    cursor: pointer;
+}
+.kurosakiHTML5AudioPlayer .soundBar {
+    width: 100%;
+    max-width: 100%;
+    height: 13px;
+}
+.kurosakiHTML5AudioPlayer .playerRightBorder {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 33px;
+    width: 1px;
+}
+
+/* Themes Common */
+.kurosakiHTML5AudioPlayer, .kurosakiHTML5AudioPlayer .progressBarWrap, .kurosakiHTML5AudioPlayer .progressBar, .kurosakiHTML5AudioPlayer .playerMiddleBorder, .kurosakiHTML5AudioPlayer .soundBarWrap, .kurosakiHTML5AudioPlayer .soundBar, .kurosakiHTML5AudioPlayer .playerRightBorder {
+    background-repeat: repeat-x;
+    background-position: 0px 0px;
+    background-size: 6px 147px;
+}
+.kurosakiHTML5AudioPlayer .playAudio, .kurosakiHTML5AudioPlayer .mute {
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    background-size: 40px 99px;
+}
+.kurosakiHTML5AudioPlayer {
+    background-position: 0px -112px;
+}
+.kurosakiHTML5AudioPlayer .playAudio {
+    background-position: 0px 0px;
+}
+.kurosakiHTML5AudioPlayer .playAudio.playing {
+    background-position: 0px -33px;
+}
+.kurosakiHTML5AudioPlayer .progressBarWrap {
+    background-position: 0px 0px;
+}
+.kurosakiHTML5AudioPlayer .progressBar {
+    background-position: 0px -10px;
+}
+.kurosakiHTML5AudioPlayer .playerMiddleBorder {
+    background-position: 0px -23px;
+}
+.kurosakiHTML5AudioPlayer .mute {
+    background-position: 0px -66px;
+}
+.kurosakiHTML5AudioPlayer .mute.halfVolume {
+    background-position: 0px -77px;
+}
+.kurosakiHTML5AudioPlayer .mute.muted {
+    background-position: 0px -88px;
+}
+.kurosakiHTML5AudioPlayer .soundBarWrap {
+    background-position: 0px -56px;
+}
+.kurosakiHTML5AudioPlayer .soundBar {
+    background-position: 0px -66px;
+}
+.kurosakiHTML5AudioPlayer .playerRightBorder {
+    background-position: 0px -79px;
+}
+
+/* Theme: Dark */
+.kurosakiHTML5AudioPlayer.dark, .kurosakiHTML5AudioPlayer.dark .progressBarWrap, .kurosakiHTML5AudioPlayer.dark .progressBar, .kurosakiHTML5AudioPlayer.dark .playerMiddleBorder, .kurosakiHTML5AudioPlayer.dark .soundBarWrap, .kurosakiHTML5AudioPlayer.dark .soundBar, .kurosakiHTML5AudioPlayer.dark .playerRightBorder {
+    background-image: url('themes/dark/barsAndBorders.png');
+}
+.kurosakiHTML5AudioPlayer.dark .playAudio, .kurosakiHTML5AudioPlayer.dark .mute {
+    background-image: url('themes/dark/buttons.png');
+}
+@media (min--moz-device-pixel-ratio: 1.5),
+   (-o-min-device-pixel-ratio: 3/2),
+   (-webkit-min-device-pixel-ratio: 1.5),
+   (min-device-pixel-ratio: 1.5),
+   (min-resolution: 144dpi),
+   (min-resolution: 1.5dppx) {
+
+    .kurosakiHTML5AudioPlayer.dark, .kurosakiHTML5AudioPlayer.dark .progressBarWrap, .kurosakiHTML5AudioPlayer.dark .progressBar, .kurosakiHTML5AudioPlayer.dark .playerMiddleBorder, .kurosakiHTML5AudioPlayer.dark .soundBarWrap, .kurosakiHTML5AudioPlayer.dark .soundBar, .kurosakiHTML5AudioPlayer.dark .playerRightBorder {
+        background-image: url('themes/dark/barsAndBorders@2x.png');
+    }
+    .kurosakiHTML5AudioPlayer.dark .playAudio, .kurosakiHTML5AudioPlayer.dark .mute {
+        background-image: url('themes/dark/buttons@2x.png');
+    }
+
+}
+
+/* Theme: Light */
+.kurosakiHTML5AudioPlayer.light, .kurosakiHTML5AudioPlayer.light .progressBarWrap, .kurosakiHTML5AudioPlayer.light .progressBar, .kurosakiHTML5AudioPlayer.light .playerMiddleBorder, .kurosakiHTML5AudioPlayer.light .soundBarWrap, .kurosakiHTML5AudioPlayer.light .soundBar, .kurosakiHTML5AudioPlayer.light .playerRightBorder {
+    background-image: url('themes/light/barsAndBorders.png');
+}
+.kurosakiHTML5AudioPlayer.light .playAudio, .kurosakiHTML5AudioPlayer.light .mute {
+    background-image: url('themes/light/buttons.png');
+}
+
+@media (min--moz-device-pixel-ratio: 1.5),
+   (-o-min-device-pixel-ratio: 3/2),
+   (-webkit-min-device-pixel-ratio: 1.5),
+   (min-device-pixel-ratio: 1.5),
+   (min-resolution: 144dpi),
+   (min-resolution: 1.5dppx) {
+
+    .kurosakiHTML5AudioPlayer.light, .kurosakiHTML5AudioPlayer.light .progressBarWrap, .kurosakiHTML5AudioPlayer.light .progressBar, .kurosakiHTML5AudioPlayer.light .playerMiddleBorder, .kurosakiHTML5AudioPlayer.light .soundBarWrap, .kurosakiHTML5AudioPlayer.light .soundBar, .kurosakiHTML5AudioPlayer.light .playerRightBorder {
+        background-image: url('themes/light/barsAndBorders@2x.png');
+    }
+    .kurosakiHTML5AudioPlayer.light .playAudio, .kurosakiHTML5AudioPlayer.light .mute {
+        background-image: url('themes/light/buttons@2x.png');
+    }
+
+}
+
+/* Theme: Red */
+.kurosakiHTML5AudioPlayer.red, .kurosakiHTML5AudioPlayer.red .progressBarWrap, .kurosakiHTML5AudioPlayer.red .progressBar, .kurosakiHTML5AudioPlayer.red .playerMiddleBorder, .kurosakiHTML5AudioPlayer.red .soundBarWrap, .kurosakiHTML5AudioPlayer.red .soundBar, .kurosakiHTML5AudioPlayer.red .playerRightBorder {
+    background-image: url('themes/red/barsAndBorders.png');
+}
+.kurosakiHTML5AudioPlayer.red .playAudio, .kurosakiHTML5AudioPlayer.red .mute {
+    background-image: url('themes/red/buttons.png');
+}
+
+@media (min--moz-device-pixel-ratio: 1.5),
+   (-o-min-device-pixel-ratio: 3/2),
+   (-webkit-min-device-pixel-ratio: 1.5),
+   (min-device-pixel-ratio: 1.5),
+   (min-resolution: 144dpi),
+   (min-resolution: 1.5dppx) {
+
+    .kurosakiHTML5AudioPlayer.red, .kurosakiHTML5AudioPlayer.red .progressBarWrap, .kurosakiHTML5AudioPlayer.red .progressBar, .kurosakiHTML5AudioPlayer.red .playerMiddleBorder, .kurosakiHTML5AudioPlayer.red .soundBarWrap, .kurosakiHTML5AudioPlayer.red .soundBar, .kurosakiHTML5AudioPlayer.red .playerRightBorder {
+        background-image: url('themes/red/barsAndBorders@2x.png');
+    }
+    .kurosakiHTML5AudioPlayer.red .playAudio, .kurosakiHTML5AudioPlayer.red .mute {
+        background-image: url('themes/red/buttons@2x.png');
+    }
+
+}
+
+/* Theme: Green */
+.kurosakiHTML5AudioPlayer.green, .kurosakiHTML5AudioPlayer.green .progressBarWrap, .kurosakiHTML5AudioPlayer.green .progressBar, .kurosakiHTML5AudioPlayer.green .playerMiddleBorder, .kurosakiHTML5AudioPlayer.green .soundBarWrap, .kurosakiHTML5AudioPlayer.green .soundBar, .kurosakiHTML5AudioPlayer.green .playerRightBorder {
+    background-image: url('themes/green/barsAndBorders.png');
+}
+.kurosakiHTML5AudioPlayer.green .playAudio, .kurosakiHTML5AudioPlayer.green .mute {
+    background-image: url('themes/green/buttons.png');
+}
+
+@media (min--moz-device-pixel-ratio: 1.5),
+   (-o-min-device-pixel-ratio: 3/2),
+   (-webkit-min-device-pixel-ratio: 1.5),
+   (min-device-pixel-ratio: 1.5),
+   (min-resolution: 144dpi),
+   (min-resolution: 1.5dppx) {
+
+    .kurosakiHTML5AudioPlayer.green, .kurosakiHTML5AudioPlayer.green .progressBarWrap, .kurosakiHTML5AudioPlayer.green .progressBar, .kurosakiHTML5AudioPlayer.green .playerMiddleBorder, .kurosakiHTML5AudioPlayer.green .soundBarWrap, .kurosakiHTML5AudioPlayer.green .soundBar, .kurosakiHTML5AudioPlayer.green .playerRightBorder {
+        background-image: url('themes/green/barsAndBorders@2x.png');
+    }
+    .kurosakiHTML5AudioPlayer.green .playAudio, .kurosakiHTML5AudioPlayer.green .mute {
+        background-image: url('themes/green/buttons@2x.png');
+    }
+
+}
+
+/* Theme: Blue */
+.kurosakiHTML5AudioPlayer.blue, .kurosakiHTML5AudioPlayer.blue .progressBarWrap, .kurosakiHTML5AudioPlayer.blue .progressBar, .kurosakiHTML5AudioPlayer.blue .playerMiddleBorder, .kurosakiHTML5AudioPlayer.blue .soundBarWrap, .kurosakiHTML5AudioPlayer.blue .soundBar, .kurosakiHTML5AudioPlayer.blue .playerRightBorder {
+    background-image: url('themes/blue/barsAndBorders.png');
+}
+.kurosakiHTML5AudioPlayer.blue .playAudio, .kurosakiHTML5AudioPlayer.blue .mute {
+    background-image: url('themes/blue/buttons.png');
+}
+
+@media (min--moz-device-pixel-ratio: 1.5),
+   (-o-min-device-pixel-ratio: 3/2),
+   (-webkit-min-device-pixel-ratio: 1.5),
+   (min-device-pixel-ratio: 1.5),
+   (min-resolution: 144dpi),
+   (min-resolution: 1.5dppx) {
+
+    .kurosakiHTML5AudioPlayer.blue, .kurosakiHTML5AudioPlayer.blue .progressBarWrap, .kurosakiHTML5AudioPlayer.blue .progressBar, .kurosakiHTML5AudioPlayer.blue .playerMiddleBorder, .kurosakiHTML5AudioPlayer.blue .soundBarWrap, .kurosakiHTML5AudioPlayer.blue .soundBar, .kurosakiHTML5AudioPlayer.blue .playerRightBorder {
+        background-image: url('themes/blue/barsAndBorders@2x.png');
+    }
+    .kurosakiHTML5AudioPlayer.blue .playAudio, .kurosakiHTML5AudioPlayer.blue .mute {
+        background-image: url('themes/blue/buttons@2x.png');
+    }
+
+}
+
+/* Theme: Yellow */
+.kurosakiHTML5AudioPlayer.yellow, .kurosakiHTML5AudioPlayer.yellow .progressBarWrap, .kurosakiHTML5AudioPlayer.yellow .progressBar, .kurosakiHTML5AudioPlayer.yellow .playerMiddleBorder, .kurosakiHTML5AudioPlayer.yellow .soundBarWrap, .kurosakiHTML5AudioPlayer.yellow .soundBar, .kurosakiHTML5AudioPlayer.yellow .playerRightBorder {
+    background-image: url('themes/yellow/barsAndBorders.png');
+}
+.kurosakiHTML5AudioPlayer.yellow .playAudio, .kurosakiHTML5AudioPlayer.yellow .mute {
+    background-image: url('themes/yellow/buttons.png');
+}
+
+@media (min--moz-device-pixel-ratio: 1.5),
+   (-o-min-device-pixel-ratio: 3/2),
+   (-webkit-min-device-pixel-ratio: 1.5),
+   (min-device-pixel-ratio: 1.5),
+   (min-resolution: 144dpi),
+   (min-resolution: 1.5dppx) {
+
+    .kurosakiHTML5AudioPlayer.yellow, .kurosakiHTML5AudioPlayer.yellow .progressBarWrap, .kurosakiHTML5AudioPlayer.yellow .progressBar, .kurosakiHTML5AudioPlayer.yellow .playerMiddleBorder, .kurosakiHTML5AudioPlayer.yellow .soundBarWrap, .kurosakiHTML5AudioPlayer.yellow .soundBar, .kurosakiHTML5AudioPlayer.yellow .playerRightBorder {
+        background-image: url('themes/yellow/barsAndBorders@2x.png');
+    }
+    .kurosakiHTML5AudioPlayer.yellow .playAudio, .kurosakiHTML5AudioPlayer.yellow .mute {
+        background-image: url('themes/yellow/buttons@2x.png');
+    }
+
+}
+
+/* Progress Bar Animation */
+@-webkit-keyframes progressBarBackgroundAnimation {
+    from {
+        background-position: 0px -10px;
+    }
+    to {
+        background-position: 5px -10px;
+    }
+}
+.kurosakiHTML5AudioPlayer .playAudio.playing + div .progressBar {
+    -webkit-animation: progressBarBackgroundAnimation 1s linear infinite;
+}
+@-khtml-keyframes progressBarBackgroundAnimation {
+    from {
+        background-position: 0px -10px;
+    }
+    to {
+        background-position: 5px -10px;
+    }
+}
+.kurosakiHTML5AudioPlayer .playAudio.playing + div .progressBar {
+    -khtml-animation: progressBarBackgroundAnimation 1s linear infinite;
+}
+@-moz-keyframes progressBarBackgroundAnimation {
+    from {
+        background-position: 0px -10px;
+    }
+    to {
+        background-position: 5px -10px;
+    }
+}
+.kurosakiHTML5AudioPlayer .playAudio.playing + div .progressBar {
+    -moz-animation: progressBarBackgroundAnimation 1s linear infinite;
+}
+@-ms-keyframes progressBarBackgroundAnimation {
+    from {
+        background-position: 0px -10px;
+    }
+    to {
+        background-position: 5px -10px;
+    }
+}
+.kurosakiHTML5AudioPlayer .playAudio.playing + div .progressBar {
+    -ms-animation: progressBarBackgroundAnimation 1s linear infinite;
+}
+@-o-keyframes progressBarBackgroundAnimation {
+    from {
+        background-position: 0px -10px;
+    }
+    to {
+        background-position: 5px -10px;
+    }
+}
+.kurosakiHTML5AudioPlayer .playAudio.playing + div .progressBar {
+    -o-animation: progressBarBackgroundAnimation 1s linear infinite;
+}
+@keyframes progressBarBackgroundAnimation {
+    from {
+        background-position: 0px -10px;
+    }
+    to {
+        background-position: 5px -10px;
+    }
+}
+.kurosakiHTML5AudioPlayer .playAudio.playing + div .progressBar {
+    animation: progressBarBackgroundAnimation 1s linear infinite;
+}

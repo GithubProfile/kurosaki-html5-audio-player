@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>Kurosaki HTML5 Audio Player Documentation</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+		textarea { width: 100%; min-width: 100%; max-width: 100%; height: 15em; min-height: 15em; font: 1em Consolas, 'Courier New', Monaco, 'DejaVu Sans Mono'; }
+	</style>
+</head>
+
+
+<body>
+	<div class="container">
+	
+		<h3 class="center alt">&ldquo;Kurosaki HTML5 Audio Player&rdquo; Documentation by &ldquo;Denis Petyukov&rdquo; v1.0</h3>
+		
+		<hr>
+		
+		<h1 class="center">&ldquo;Kurosaki HTML5 Audio Player&rdquo;</h1>
+		
+		<div class="borderTop">
+			<div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					Created: 04/24/2013<br>
+					By: Denis Petyukov<br>
+					Email: <a href="mailto:denis.petyukov@gmail.com">denis.petyukov@gmail.com</a>
+					</strong>
+				</p>
+			</div><!-- end div .span-6 -->		
+		</div><!-- end div .borderTop -->
+		
+		<hr>
+		
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#description">Description</a></li>
+			<li><a href="#basicUsage">Basic Usage</a></li>
+			<li>
+				<a href="#options">Options</a>
+				<ol>
+					<li><a href="#selector">selector</a></li>
+					<li><a href="#width">width</a></li>
+					<li><a href="#minWidth">minWidth</a></li>
+					<li><a href="#maxWidth">maxWidth</a></li>
+					<li><a href="#theme">theme</a></li>
+					<li><a href="#seekBar">seekBar</a></li>
+					<li><a href="#volumeControl">volumeControl</a></li>
+				</ol>
+			</li>
+			<li><a href="#psdFiles">PSD Files</a></li>
+			<li><a href="#credits">Sources and Credits</a></li>
+		</ol>
+		
+		<hr>
+		
+		<h3 id="description"><strong>A) Desciption</strong> - <a href="#toc">top</a></h3>
+		<p><b>Kurosaki HTML5 Audio Player</b> is written in Pure JavaScript. No JavaScript library needed. It uses HTML5 &lt;audio&gt; tag, and adds its own controls to every tag its used on. If HTML5 &lt;audio&gt; tag has <i>controls</i> attribute specified, <b>Kurosaki HTML5 Audio Player</b> removes this attribute, and adds its own controls.</p>
+
+		<h3 id="basicUsage"><strong>B) Basic Usage</strong> - <a href="#toc">top</a></h3>
+
+		<p>To start using <b>Kurosaki HTML5 Audio Player</b> drop <b>kurosakiHTML5AudioPlayer</b> folder in your project. Reference <i>CSS</i> file in the head of your document:
+		<textarea spellcheck="false"><link rel="stylesheet" href="kurosakiHTML5AudioPlayer/kurosakiHTML5AudioPlayer.css"></textarea>
+		</p> 
+		
+		<p>Reference <i>JavaScript</i> file in the head of your document:
+		<textarea spellcheck="false"><script src="kurosakiHTML5AudioPlayer/kurosakiHTML5AudioPlayer.js"></script></textarea>
+		</p>
+		<p>Initiate <b>Kurosaki HTML5 Audio Player</b>:
+		<textarea spellcheck="false"><script>
+kurosakiHTML5AudioPlayer();
+</script></textarea>
+		</p>
+		<p>Thats it! Now all &lt;audio&gt; tags on your page transformed into <b>Kurosaki HTML5 Audio Player</b>! Though, when you initiate <b>Kurosaki HTML5 Audio Player</b> without any options, it uses default options. To know more about options, read further.
+		</p>
+
+		<hr>
+		
+		<h3 id="javascript"><strong>C) Options</strong> - <a href="#toc">top</a></h3>
+		
+		<p>Default Options Are:
+		<textarea spellcheck="false"><script>
+kurosakiHTML5AudioPlayer({
+    selector: 'audio',
+    width: '100%',
+    maxWidth: '100%',
+    minWidth: '0',
+    theme: 'light',
+    seekBar: true,
+    volumeControl: true
+});
+</script></textarea>
+		</p>
+		<p>To know more about every option and its possible values, read further.</p>
+
+		<h4 id="selector"><strong>1) selector</strong> - <a href="#toc">top</a></h4>
+		
+		<p><b>selector</b> option accepts CSS selector. Selector should target HTML5 &lt;audio&gt; tags.</p>
+
+		<h4 id="width"><strong>2) width</strong> - <a href="#toc">top</a></h4>
+		
+		<p><b>width</b> option accepts desired width of player. It accepts values in percents, pixels, and ems.</p>
+
+		<h4 id="maxWidth"><strong>3) maxWidth</strong> - <a href="#toc">top</a></h4>
+		
+		<p><b>maxWidth</b> option accepts desired maximum width of player. It accepts values in percents, pixels, and ems.</p>
+
+		<h4 id="minWidth"><strong>4) minWidth</strong> - <a href="#toc">top</a></h4>
+		
+		<p><b>minWidth</b> option accepts desired manimum width of player. It accepts values in percents, pixels, and ems.</p>
+
+		<h4 id="theme"><strong>5) theme</strong> - <a href="#toc">top</a></h4>
+		
+		<p><b>theme</b> option accepts player theme name. Themes available are: <b>'light', 'dark', 'red', 'green', 'blue', 'yellow'</b>.</p>
+
+		<h4 id="seekBar"><strong>6) seekBar</strong> - <a href="#toc">top</a></h4>
+		
+		<p><b>seekBar</b> option determines whether or not player seek bar will be shown. It accepts two values: <b>true</b> or <b>false</b>.</p>
+
+		<h4 id="volumeControl"><strong>7) volumeControl</strong> - <a href="#toc">top</a></h4>
+		
+		<p><b>volumeControl</b> option determines whether or not player volume control will be shown. It accepts two values: <b>true</b> or <b>false</b>.</p>
+
+		<p><i>Note:</i> To see working player instantiated using different combinations of settings see <a href="../demo/demoAll.html">demo</a>.</p>
+
+		
+		<hr>
+
+		
+		<h3 id="psdFiles"><strong>D) PSD Files</strong> - <a href="#toc">top</a></h3>
+		
+		<p>I've included 5 psd files:</p>
+		
+			<ol>
+				<li>musicPlayer.psd</li>
+				<li>barsAndBorders.psd</li>
+				<li>barsAndBorders@2x.psd</li>
+				<li>buttons.psd</li>
+				<li>buttons@2x.psd</li>
+			</ol>
+	
+		<hr>
+		
+		<h3 id="credits"><strong>E) Sources and Credits</strong> - <a href="#toc">top</a></h3>
+		
+		<p>Thanks to elemisfreebies.com for PSD-freebie I used as basis of my player. You can find the file I started from here: <a href="http://elemisfreebies.com/02/09/audio-player-psd/">http://elemisfreebies.com/02/09/audio-player-psd/</a></p>
+		<p>Song used in demo of <b>Kurosaki HTML5 Audio Player</b> is played by violinist <a href="http://www.cwu.edu/music/carrie-rehkopf">Carrie Rehkopf</a>. You can download the song here: <a href="http://en.wikipedia.org/wiki/Wikipedia:Sound/list">http://en.wikipedia.org/wiki/Wikipedia:Sound/list</a>. Song is licenced under <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA</a> licence.</p>
+		
+		<hr>
+		
+		<p class="append-bottom alt large"><strong>Denis Petyukov</strong></p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+		
+		<hr class="space">
+	</div><!-- end div .container -->
+</body>
+</html>
