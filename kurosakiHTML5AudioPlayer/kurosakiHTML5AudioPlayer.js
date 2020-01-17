@@ -1,5 +1,5 @@
 /* Kurosaki HTML5 Audio Player v1.0
-   Author: Denis Petyukov <denis.petyukov@gmail.com>
+   Author: Denys Petiukov <denys.petiukov@gmail.com>
 */
 var kurosakiHTML5AudioPlayer = function(settings) {
     (function() {
