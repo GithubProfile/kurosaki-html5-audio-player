@@ -1,6 +1,5 @@
-/* Kurosaki HTML5 Audio Player v1.0
-   Author: Denys Petiukov <denys.petiukov@gmail.com>
-*/
+/*! Copyright (c) 2013 Denys Petiukov. License: BSD 3-Clause. */
+
 var kurosakiHTML5AudioPlayer = function(settings) {
     (function() {
         var pauseAllAudio = function() {
