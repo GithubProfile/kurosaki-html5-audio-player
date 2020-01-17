@@ -383,3 +383,8 @@ textarea.demo {
     margin: .5% 1% 2% 0;
     font: 1em Consolas, 'Courier New', Monaco, 'DejaVu Sans Mono';
 }
+.license p {
+    background: white;
+    border-radius: 10px;
+    padding: 5px;
+}
